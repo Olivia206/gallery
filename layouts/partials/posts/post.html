@@ -1,6 +1,7 @@
 <div class="post">
+  <h1>{{ .Title }}</h1>
     {{- partial "posts/categories.html" . -}}
-    <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}">
+    <img src="{{ .Params.image }}" alt="{{ .Params.alt }}">
   </div>
 </div>
   
