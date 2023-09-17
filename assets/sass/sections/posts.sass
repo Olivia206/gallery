@@ -25,3 +25,26 @@
 
         &.large
             grid-row-end: span $post-large
+        .content
+            align-items: center
+            background: transparentize(black, .5)
+            background-blend-mode: darken
+            backdrop-filter: blur(1px)
+            bottom: 0
+            display: flex
+            justify-content: center
+            left: 0
+            padding: px2rem(20)
+            position: absolute
+            opacity: 0
+            top: 0
+            right: 0
+            text-align: center
+            transform: scale(1.1)
+            a
+                @include stretched-link
+                color: white
+        &:hover .content
+            opacity: 1
+            transform: scale(1)
+            transition: .3s ease

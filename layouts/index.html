@@ -8,7 +8,7 @@
         {{ range first 10 (.Pages.ByDate).Reverse }}
         <li class="post {{ .Params.size }}">
             <img src="{{ .Params.image }}" alt="{{ .Params.alt }}">
-            <div class="content" style="display: none">
+            <div class="content">
                 <h3>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h3>                

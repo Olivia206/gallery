@@ -5,3 +5,13 @@
 @function pxr2rem($size)
     $remSize: $size / 16 / 2
     @return #{$remSize}rem
+
+@mixin stretched-link($pseudo-element: after)
+    &::#{$pseudo-element}
+        bottom: 0
+        content: ''
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 5
