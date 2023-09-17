@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if .IsHome }}
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {{ end }}
       {{ partial "head/css.html" }}
       {{ partial "head/seo.html" . }}
       {{ partial "head/favicons.html" . }}
@@ -20,5 +23,19 @@
     </main>
     {{- partial "footer/footer.html" . -}}
     {{- partial "footer/js.html" . -}}
+
+    {{ if .IsHome }}
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    {{ end }}
   </body>
 </html>
