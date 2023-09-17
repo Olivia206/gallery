@@ -19,6 +19,7 @@ collections:
       - {label: "Date de publication", name: "date", widget: "datetime"}
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Texte alternatif", name: "alt", widget: "string"}
+      - {label: "Taille", name: "size", widget: "select", options: ["small", "medium", "large"]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Catégories", name: "categories", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
