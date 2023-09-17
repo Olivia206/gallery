@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+  {{- partial "header/hero.html" . -}}
+
+  <h1>Un test de galerie de type pinterest ici !</h1>
+  
+  <ul class="posts-list">
+    {{ range (.Pages.ByDate).Reverse }}
+        <li class="post {{ .Params.size }}">
+            <img src="{{ .Params.image }}" alt="{{ .Params.alt }}">
+            <div class="content" style="display: none">
+                <h3>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>                
+            </div>
+        </li>
+    {{ end }}
+  </ul>
+
+{{ end }}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <h1>c la home !</h1>
+
+  {{ with .Site.GetPage "/posts" }}
+
+    <section>
+      <ul class="posts-list">
+        {{ range first 10 (.Pages.ByDate).Reverse }}
+        <li class="post {{ .Params.size }}">
+            <img src="{{ .Params.image }}" alt="{{ .Params.alt }}">
+            <div class="content" style="display: none">
+                <h3>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>                
+            </div>
+        </li>
+      {{ end }}
+      </ul>
+    </section>
+
+  {{ end }}
+{{ end }}

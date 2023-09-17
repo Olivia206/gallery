@@ -1,0 +1,27 @@
+.posts-list
+    display: grid
+    grid-template-columns: repeat(auto-fill, $post-width)
+    grid-auto-rows: 10px
+    justify-content: center
+    .post
+        align-items: center
+        border: 10px solid $body-color
+        display: flex
+        justify-content: center
+        overflow: hidden
+        padding: 0
+        position: relative
+        width: $post-width
+        img
+            height: 100%
+        &.small
+            aspect-ratio: 1
+            grid-row-end: span $post-small
+            img
+                object-fit: cover
+                width: 100%
+        &.medium
+            grid-row-end: span $post-medium
+
+        &.large
+            grid-row-end: span $post-large
